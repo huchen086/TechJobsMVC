@@ -12,8 +12,8 @@
         @foreach (KeyValuePair<string, string> field in job)
         {
             <tr>
-                <td>@field.Key</td>
-                <td>@field.Value</td>
+                <td>@field.Key.ToUpper()</td>
+                <td><a asp-controller="List" asp-action="Jobs" asp-route-column="@field.Key" asp-route-value="@field.Value">@field.Value</a></td>
             </tr>
         }
     </table>
